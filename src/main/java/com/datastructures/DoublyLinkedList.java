@@ -72,7 +72,8 @@ public class DoublyLinkedList<T> {
 
         if (tail == null) {
             head = tail = newNode;
-        } else {
+        }
+        else {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
@@ -105,7 +106,8 @@ public class DoublyLinkedList<T> {
 
         if (current == null) {
             addLast(data);
-        } else {
+        }
+        else {
             newNode.next = current;
             newNode.prev = current.prev;
             current.prev.next = newNode;
@@ -123,7 +125,8 @@ public class DoublyLinkedList<T> {
 
         if (head == null) {
             head = tail = newNode;
-        } else {
+        }
+        else {
             head.prev = newNode;
             newNode.next = head;
             head = newNode;
@@ -225,7 +228,8 @@ public class DoublyLinkedList<T> {
 
         if (head != null) {
             head.prev = null;
-        } else {
+        }
+        else {
             tail = null;
         }
     }
@@ -242,7 +246,8 @@ public class DoublyLinkedList<T> {
 
         if (tail != null) {
             tail.next = null;
-        } else {
+        }
+        else {
             head = null;
         }
     }
@@ -298,6 +303,7 @@ public class DoublyLinkedList<T> {
      */
     public boolean contains(T data) {
         Node<T> current = head;
+
         while (current != null) {
             if (current.data.equals(data)) {
                 return true;
