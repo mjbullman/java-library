@@ -139,7 +139,16 @@ public class DoublyLinkedList<T> {
      * @param data The data to be added.
      */
     public void addLast(T data) {
-        add(data);
+        Node<T> newNode = this.newNode(data);
+
+        if (tail == null) {
+            head = tail = newNode;
+        }
+        else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
     }
 
     /**
@@ -169,7 +178,7 @@ public class DoublyLinkedList<T> {
      * @return The first element, or null if the list is empty.
      */
     public T getFirst() {
-        return (head != null) ? head.data : null;
+        return head != null ? head.data : null;
     }
 
     /**
@@ -178,7 +187,7 @@ public class DoublyLinkedList<T> {
      * @return The last element, or null if the list is empty.
      */
     public T getLast() {
-        return (tail != null) ? tail.data : null;
+        return tail != null ? tail.data : null;
     }
 
     /**
