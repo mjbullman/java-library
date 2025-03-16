@@ -14,10 +14,6 @@ package com.algorithms.sorting;
  */
 public class SelectionSort {
     public static <T extends Comparable<T>> void sort(T[] array) {
-        if (array == null || array.length <= 1) {
-            return;
-        }
-
         int n = array.length;
 
         for (int i = 0; i < n - 1; i++) {
