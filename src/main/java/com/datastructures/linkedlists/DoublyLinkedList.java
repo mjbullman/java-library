@@ -1,4 +1,4 @@
-package com.datastructures;
+package com.datastructures.linkedlists;
 
 /**
  * A generic implementation of a Doubly Linked List.
