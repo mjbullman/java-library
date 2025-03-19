@@ -14,6 +14,12 @@ package com.algorithms.sorting;
  *            implement the {@code Comparable} interface to support comparison.
  */
 public class BubbleSort {
+    /**
+     * Sorts an array in ascending order using the Bubble sort algorithm.
+     *
+     * @param <T>   The type of elements, must implement {@code Comparable}.
+     * @param array The array to be sorted (modified in place).
+     */
     public static <T extends Comparable<T>> void sort(T[] array) {
         boolean swapped;
 

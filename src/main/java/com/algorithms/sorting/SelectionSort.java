@@ -13,6 +13,12 @@ package com.algorithms.sorting;
  * @param <T> The type of elements in the array to be sorted. Must implement {@code Comparable<T>}.
  */
 public class SelectionSort {
+    /**
+     * Sorts an array in ascending order using the Selection sort algorithm.
+     *
+     * @param <T>   The type of elements, must implement {@code Comparable}.
+     * @param array The array to be sorted (modified in place).
+     */
     public static <T extends Comparable<T>> void sort(T[] array) {
         int n = array.length;
 
