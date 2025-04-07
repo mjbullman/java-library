@@ -217,9 +217,6 @@ public class MinHeap<T extends Comparable<T>> {
 
     /**
      * Bubbles the element at the specified index up the heap until the heap property is restored.
-     * <p>
-     * Used after insertion or priority increase.
-     * </p>
      *
      * @param index The index of the element to bubble up.
      */
@@ -247,9 +244,6 @@ public class MinHeap<T extends Comparable<T>> {
 
     /**
      * Pushes the element at the specified index down the heap until the heap property is restored.
-     * <p>
-     * Used after deletion or priority decrease.
-     * </p>
      *
      * @param index The index of the element to push down.
      */
@@ -305,6 +299,20 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     /**
+     * Compares two elements to determine if one has higher priority in the min-heap.
+     * <p>
+     * In a min-heap, an element has higher priority if it is less than another element.
+     * </p>
+     *
+     * @param element The element to compare.
+     * @param withRespectToElement The element to compare against.
+     * @return {@code true} if the first element is smaller, {@code false} otherwise.
+     */
+    protected boolean hasHigherPriority(T element, T withRespectToElement) {
+        return element.compareTo(withRespectToElement) < 0;
+    }
+
+    /**
      * Validates that the branching factor falls within the acceptable range.
      *
      * @param branchingFactor The branching factor to validate.
@@ -344,20 +352,6 @@ public class MinHeap<T extends Comparable<T>> {
     @Override
     public String toString() {
         return heap.toString();
-    }
-
-    /**
-     * Compares two elements to determine if one has higher priority in the min-heap.
-     * <p>
-     * In a min-heap, an element has higher priority if it is less than another element.
-     * </p>
-     *
-     * @param element The element to compare.
-     * @param withRespectToElement The element to compare against.
-     * @return {@code true} if the first element is smaller, {@code false} otherwise.
-     */
-    protected boolean hasHigherPriority(T element, T withRespectToElement) {
-        return element.compareTo(withRespectToElement) < 0;
     }
 
     /**
