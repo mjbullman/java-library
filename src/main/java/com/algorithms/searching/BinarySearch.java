@@ -52,14 +52,12 @@ public class BinarySearch {
 
     /**
      * Performs a recursive binary search on a sorted array to find the index of the specified key.
-     *
      * <p>
      * This method divides the search range in half each time, making it efficient for searching in
      * large datasets with a time complexity of O(log n). The array must be sorted for binary search
      * to function correctly.
      * </p>
      *
-     * <p>
      * If the key is found in the array, the index of the key is returned. If the key is not present,
      * the method returns -1.
      * </p>
@@ -73,7 +71,7 @@ public class BinarySearch {
      * @return The index of the key if found, otherwise -1.
      */
     public static <T extends Comparable<T>> int searchRecursive(T[] sortedArray, T key, Integer low, Integer high) {
-        int mid = low  + ((high - low) / 2);
+        int mid = low + ((high - low) / 2);
 
         if (high < low) {
             return -1;
@@ -83,10 +81,10 @@ public class BinarySearch {
             return mid;
         }
         else if (sortedArray[mid].compareTo(key) < 0) {
-            return searchRecursive(sortedArray, key, low, mid - 1);
+            return searchRecursive(sortedArray, key, mid + 1, high);
         }
         else if (sortedArray[mid].compareTo(key) > 0) {
-            return searchRecursive(sortedArray, key, mid + 1, high);
+            return searchRecursive(sortedArray, key, low, mid - 1);
         }
 
         return -1;

@@ -1,9 +1,10 @@
 package com.algorithms.searching;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.stream.IntStream;
 import java.util.stream.DoubleStream;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class BinarySearchTest {
 
@@ -77,5 +78,21 @@ public class BinarySearchTest {
 
         assertEquals(499999, BinarySearch.search(array, 500000.0));
         assertEquals(-1, BinarySearch.search(array, 1000001.0));
+    }
+
+    @Test
+    public void testSearchRecursiveIntegerArray() {
+        Integer[] array = {10, 20, 30, 40, 50};
+
+        assertEquals(2, BinarySearch.searchRecursive(array, 30, 0, array.length - 1));
+        assertEquals(-1, BinarySearch.searchRecursive(array, 60, 0, array.length - 1));
+    }
+
+    @Test
+    public void testSearchRecursiveStringArray() {
+        String[] array = {"apple", "banana", "cherry", "date"};
+
+        assertEquals(1, BinarySearch.searchRecursive(array, "banana", 0, array.length - 1));
+        assertEquals(-1, BinarySearch.searchRecursive(array, "grape", 0, array.length - 1));
     }
 }

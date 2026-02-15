@@ -23,10 +23,11 @@ public class LinearSearch {
      * @param array The array to search (it will not be modified).
      * @param key   The value to search for in the array.
      * @return The index of the key if found; otherwise, returns -1.
+     * @throws NullPointerException if the array is null.
      */
-    public static <T extends Comparable<T>> int search (T[] array, T key) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i].compareTo(key) == 0) {
+    public static <T> int search (T[] array, T key) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(key)) {
                 return i;
             }
         }
