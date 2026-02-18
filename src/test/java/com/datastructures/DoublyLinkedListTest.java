@@ -1,5 +1,6 @@
 package com.datastructures;
 
+import com.datastructures.linkedlists.DoublyLinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

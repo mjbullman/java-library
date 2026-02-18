@@ -20,6 +20,10 @@ public class SelectionSort {
      * @param array The array to be sorted (modified in place).
      */
     public static <T extends Comparable<T>> void sort(T[] array) {
+        if (array == null || array.length == 0) {
+            return;
+        }
+
         int n = array.length;
 
         for (int i = 0; i < n - 1; i++) {
