@@ -84,15 +84,15 @@ public class BinarySearchTest {
     public void testSearchRecursiveIntegerArray() {
         Integer[] array = {10, 20, 30, 40, 50};
 
-        assertEquals(2, BinarySearch.searchRecursive(array, 30, 0, array.length - 1));
-        assertEquals(-1, BinarySearch.searchRecursive(array, 60, 0, array.length - 1));
+        assertEquals(2, BinarySearch.searchRecursive(array, 30));
+        assertEquals(-1, BinarySearch.searchRecursive(array, 60));
     }
 
     @Test
     public void testSearchRecursiveStringArray() {
         String[] array = {"apple", "banana", "cherry", "date"};
 
-        assertEquals(1, BinarySearch.searchRecursive(array, "banana", 0, array.length - 1));
-        assertEquals(-1, BinarySearch.searchRecursive(array, "grape", 0, array.length - 1));
+        assertEquals(1, BinarySearch.searchRecursive(array, "banana"));
+        assertEquals(-1, BinarySearch.searchRecursive(array, "grape"));
     }
 }
